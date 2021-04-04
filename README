@@ -1,0 +1,25 @@
+Monitor and alert system for time spent in game.
+
+Technical Notes:
+
+Alert intervals use "game minutes" and will be affected by anything that
+changes game speed. Any mods or commands that changes the game speed and/or
+game performance preventing the game running at 60ticks/s will produce
+incorrect "in real-life" timings.
+
+If you need precise real-world timing you'll have to resort to methods that
+don't depend on the game engine. E.g. setting up an alarm in real life.
+
+For more details check: https://wiki.factorio.com/Time
+
+
+Due to technical limitations of the modding API, it is not trivial to
+determine the session length of the player hosting a multiplayer server
+or playing in single player mode.
+
+Players in such categories should reset the timer manually by issuing:
+    /wellbeing reset-timer
+at the start of each session.
+
+For the remaining players the timer is reset automatically when the
+player joins the game.

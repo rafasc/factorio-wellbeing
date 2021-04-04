@@ -1,0 +1,5 @@
+Release Notes:
+
+0.0.1
+    - Add configurable setting to specify the alert time interval. Setting this to 0 disables the alerts.
+    - Add /wellbeing reset-timer command. This resets the player's running session time.
