@@ -1,0 +1,9 @@
+{
+  "name": "wellbeing",
+  "version": "0.0.0",
+  "title": "wellbeing",
+  "author": "rafasc",
+  "factorio_version": "1.1",
+  "dependencies": ["base >= 1.0"],
+  "description": "Monitor and alert system for time spent in game."
+}

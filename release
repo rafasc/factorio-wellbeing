@@ -1,0 +1,15 @@
+#!/bin/bash
+
+version=$(jq -r '.version' info.json)
+modname=$(jq -r '.name' info.json)
+
+case $1 in
+    bump)
+        git tag -a "${version}" -m "Release ${modname} ${version}" --edit
+        ;;
+    zip)
+        git archive "${version}" --format=zip --prefix="${modname}/" -o "${modname}_${version}.zip"
+        ;;
+    *)
+        printf '%s\n' "use either 'bump' or 'zip' actions"
+esac
