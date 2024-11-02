@@ -20,7 +20,7 @@ function wellbeing_message_handler()
         function(event)
             for i, player in pairs(game.players) do
                 if player.mod_settings["wellbeing-alert-interval"].value * ticks_per_minute == event.nth_tick then
-                    local session_duration = game.tick - (global.session_start[player.index] or 0)
+                    local session_duration = game.tick - (storage.session_start[player.index] or 0)
                     player.print("You've been playing for " .. formattime(session_duration) .. "\n" ..
                                  "Perhaps time for a pause? Will warn again in: " .. formattime(event.nth_tick))
                 end
@@ -31,21 +31,21 @@ end
 
 script.on_init(
     function()
-        global.session_start = {}
+        storage.session_start = {}
         wellbeing_message_handler()
     end
 )
 
 script.on_event(defines.events.on_player_joined_game,
     function(event)
-        global.session_start[event.player_index] = game.tick
+        storage.session_start[event.player_index] = game.tick
     end
 )
 
 commands.add_command("wellbeing", "<reset-timer> resets the session timer to zero",
     function(command)
         if command.parameter == "reset-timer" then
-            global.session_start[command.player_index] = game.tick
+            storage.session_start[command.player_index] = game.tick
         end
     end
 )

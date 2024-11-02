@@ -1,5 +1,11 @@
-Release Notes:
-
-0.0.1
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 02. 01. 2024
+  Changes:
+    - Update to Factorio 2.0.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 04. 04. 2021
+  Changes:
     - Add configurable setting to specify the alert time interval. Setting this to 0 disables the alerts.
     - Add /wellbeing reset-timer command. This resets the player's running session time.
